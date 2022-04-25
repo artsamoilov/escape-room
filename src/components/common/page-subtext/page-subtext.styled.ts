@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const PageSubtext = styled.p`
-  margin: 0;
-  margin-bottom: 9px;
+  margin: 0 0 9px 0;
   padding: 0;
 
   font-size: ${({ theme }) => theme.font.semibase};

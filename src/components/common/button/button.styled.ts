@@ -6,10 +6,7 @@ const Button = styled.button`
 
   max-width: 100%;
   margin: 0;
-  padding-top: 22px;
-  padding-right: 47px;
-  padding-bottom: 23px;
-  padding-left: 48px;
+  padding: 22px 47px 23px 48px;
 
   font-family: inherit;
   font-size: ${({ theme }) => theme.font.upperbase};

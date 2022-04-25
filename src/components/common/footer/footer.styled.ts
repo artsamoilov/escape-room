@@ -15,8 +15,7 @@ const Socials = styled.ul`
   align-items: flex-start;
 
   max-width: 500px;
-  margin: 0;
-  margin-bottom: -7px;
+  margin: 0 0 -7px 0;
   padding: 0;
   list-style: none;
 `;

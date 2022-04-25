@@ -19,9 +19,7 @@ const ContentWrapper = styled.div`
   max-width: 1080px;
   flex-shrink: 0;
   width: 100%;
-  margin: 0 auto;
-  margin-top: 136px;
-  margin-bottom: 40px;
+  margin: 136px auto 40px auto;
 `;
 
 const PageHeading = styled(Heading)`
@@ -38,10 +36,8 @@ const Contacts = styled.div`
 
 const ContactsList = styled.dl`
   width: 233px;
-  margin: 0;
-  margin-left: 30px;
-  padding: 0;
-  padding-top: 14px;
+  margin: 0 0 0 30px;
+  padding: 14px 0 0 0;
 `;
 
 const ContactTitle = styled.dt`
