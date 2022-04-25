@@ -17,10 +17,7 @@ const HeaderWrapper = styled(Container)`
   display: flex;
   align-items: flex-start;
   min-height: 74px;
-  padding-top: 23px;
-  padding-right: 33px;
-  padding-bottom: 23px;
-  padding-left: 32px;
+  padding: 23px 33px 23px 32px;
 `;
 
 const Logo = styled.a`
@@ -49,11 +46,8 @@ const Links = styled.ul`
   align-items: flex-start;
 
   max-width: 600px;
-  margin: 0;
-  padding: 0;
-  padding-top: 17px;
-  padding-bottom: 17px;
-  margin-bottom: -10px;
+  margin: 0 0 -10px 0;
+  padding: 17px 0;
   list-style: none;
 `;
 
@@ -64,7 +58,7 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink)`
+const Link = styled(RouterLink)<{ $isActiveLink?: boolean }>`
   display: block;
   max-width: 100px;
   font-size: ${({ theme }) => theme.font.semibase};

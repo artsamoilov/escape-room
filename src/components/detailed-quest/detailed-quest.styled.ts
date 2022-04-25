@@ -44,10 +44,8 @@ const PageTitle = styled.h1`
 `;
 
 const PageSubtitle = styled.p`
-  margin: 0;
-  margin-bottom: 10px;
-  padding: 0;
-  padding-left: 7px;
+  margin: 0 0 10px 0;
+  padding: 0 0 0 7px;
 
   font-size: ${({ theme }) => theme.font.semibase};
   line-height: 144%;
@@ -62,8 +60,7 @@ const Features = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
-  margin: 0;
-  margin-bottom: 18px;
+  margin: 0 0 18px 0;
   padding: 0;
   list-style: none;
 `;
@@ -98,8 +95,7 @@ const FeatureTitle = styled.span`
 `;
 
 const QuestDescription = styled.p`
-  margin: 0;
-  margin-bottom: 45px;
+  margin: 0 0 45px 0;
   padding: 0;
 
   line-height: 150%;
@@ -107,7 +103,7 @@ const QuestDescription = styled.p`
   letter-spacing: 0.013em;
 `;
 
-const QuestBookingBtn = styled(Button).attrs({ type: 'button' })`
+const QuestBookingBtn = styled(Button).attrs({ type: 'button' })<{ onClick: () => void }>`
   margin-left: 2px;
 `;
 

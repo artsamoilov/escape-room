@@ -5,8 +5,7 @@ const Tabs = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   padding: 0;
   list-style: none;
 
@@ -36,7 +35,7 @@ const TabItem = styled.li`
   }
 `;
 
-const TabBtn = styled.button.attrs({ type: 'button' })`
+const TabBtn = styled.button.attrs({ type: 'button' })<{ isActive?: boolean }>`
   display: flex;
   align-items: center;
   padding: 0;
@@ -143,8 +142,7 @@ const QuestContent = styled.div`
 const QuestTitle = styled.h2`
   max-width: 264px;
   max-height: 59px;
-  margin: 0;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
   padding: 0;
 
   font-size: ${({ theme }) => theme.font.medium};

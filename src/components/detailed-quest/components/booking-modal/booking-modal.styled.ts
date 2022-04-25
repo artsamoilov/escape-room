@@ -20,8 +20,7 @@ const Modal = styled.section`
 
   max-height: 100%;
   width: 480px;
-  padding: 32px;
-  padding-bottom: 50px;
+  padding: 32px 32px 50px 32px;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -58,8 +57,7 @@ const ModalCloseLabel = styled.span.attrs({
 })``;
 
 const ModalTitle = styled.h2`
-  margin: 0;
-  margin-bottom: 39px;
+  margin: 0 0 39px 0;
   padding: 0;
 
   font-size: ${({ theme }) => theme.font.formsHeading};
@@ -78,8 +76,7 @@ const BookingField = styled.p`
   flex-direction: column;
 
   margin: 0;
-  padding: 0;
-  padding-right: 16px;
+  padding: 0 16px 0 0;
 
   &:not(:last-of-type) {
     margin-bottom: 30px;
@@ -92,10 +89,7 @@ const BookingLabel = styled.label`
 `;
 
 const BookingInput = styled.input`
-  padding-top: 17px;
-  padding-right: 24px;
-  padding-bottom: 18px;
-  padding-left: 23px;
+  padding: 17px 24px 18px 23px;
 
   font-family: inherit;
 
@@ -115,14 +109,11 @@ const BookingInput = styled.input`
   }
 `;
 
-const BookingSubmit = styled(Button)`
+const BookingSubmit = styled(Button)<{ type: string }>`
   align-self: center;
   margin-top: 55px;
   margin-bottom: 21px;
-  padding-top: 15px;
-  padding-right: 34px;
-  padding-bottom: 16px;
-  padding-left: 34px;
+  padding: 15px 34px 16px 34px;
 
   font-size: ${({ theme }) => theme.font.semibase};
   line-height: 16px;
