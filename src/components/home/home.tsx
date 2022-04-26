@@ -1,9 +1,4 @@
-import {
-  MainLayout,
-  PageTitle,
-  PageHeading,
-  PageSubtext,
-} from 'components/common/common';
+import { MainLayout, PageTitle, PageHeading, PageSubtext } from 'components/common/common';
 import { QuestsCatalog } from './components/components';
 import * as S from './home.styled';
 

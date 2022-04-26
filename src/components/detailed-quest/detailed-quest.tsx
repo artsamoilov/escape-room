@@ -17,7 +17,7 @@ const DetailedQuest = (): JSX.Element => {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src="img/cover-maniac.jpg"
+          src="../img/cover-maniac.jpg"
           alt="Квест Маньяк"
           width="1366"
           height="768"
