@@ -6,12 +6,18 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import {Quests} from 'mocks/quests';
-import {QuestLevel, QuestType, TranslatedQuestLevel, TranslatedQuestType} from '../../const';
+import {AppRoute, Level, Type, TranslatedLevel, TranslatedType} from '../../const';
+import {Navigate, useParams} from 'react-router-dom';
 
 const DetailedQuest = (): JSX.Element => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
   const {coverImg, title, type, duration, peopleCount, level, description} = Quests[0];
+
+  const currentId = Number(useParams().id);
+  if (!Quests.find(({id}) => id === currentId)) {
+    return <Navigate to={AppRoute.NotFound} />;
+  }
 
   const handleBookingBtnClick = () => {
     setIsBookingModalOpened(true);
@@ -29,7 +35,7 @@ const DetailedQuest = (): JSX.Element => {
         <S.PageContentWrapper>
           <S.PageHeading>
             <S.PageTitle>{title}</S.PageTitle>
-            <S.PageSubtitle>{TranslatedQuestType[type as QuestType]}</S.PageSubtitle>
+            <S.PageSubtitle>{TranslatedType[type as Type]}</S.PageSubtitle>
           </S.PageHeading>
 
           <S.PageDescription>
@@ -44,7 +50,7 @@ const DetailedQuest = (): JSX.Element => {
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPuzzle width="24" height="24" />
-                <S.FeatureTitle>{TranslatedQuestLevel[level as QuestLevel]}</S.FeatureTitle>
+                <S.FeatureTitle>{TranslatedLevel[level as Level]}</S.FeatureTitle>
               </S.FeaturesItem>
             </S.Features>
 

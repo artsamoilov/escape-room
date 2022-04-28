@@ -1,3 +1,10 @@
+const ERROR_TIMEOUT = 2000;
+
+export enum HTTPCode {
+  BadRequest = 400,
+  NotFound = 404,
+}
+
 export enum AppRoute {
   Home = '/',
   Contacts = '/contacts',
@@ -5,19 +12,24 @@ export enum AppRoute {
   NotFound = '/404',
 }
 
-export enum QuestLevel {
+export enum APIRoute {
+  Quests = '/quests',
+  Order = '/orders',
+}
+
+export enum Level {
   Easy = 'easy',
   Medium = 'medium',
   Hard = 'hard',
 }
 
-export const TranslatedQuestLevel = {
-  [QuestLevel.Easy]: 'лёгкий',
-  [QuestLevel.Medium]: 'средний',
-  [QuestLevel.Hard]: 'сложный',
+export const TranslatedLevel = {
+  [Level.Easy]: 'лёгкий',
+  [Level.Medium]: 'средний',
+  [Level.Hard]: 'сложный',
 }
 
-export enum QuestType {
+export enum Type {
   All = 'all',
   Adventures = 'adventures',
   Horror = 'horror',
@@ -26,11 +38,11 @@ export enum QuestType {
   SciFi = 'sci-fi',
 }
 
-export const TranslatedQuestType = {
-  [QuestType.All]: 'все квесты',
-  [QuestType.Adventures]: 'приключения',
-  [QuestType.Horror]: 'ужасы',
-  [QuestType.Mystic]: 'мистика',
-  [QuestType.Detective]: 'детектив',
-  [QuestType.SciFi]: 'sci-fi',
+export const TranslatedType = {
+  [Type.All]: 'все квесты',
+  [Type.Adventures]: 'приключения',
+  [Type.Horror]: 'ужасы',
+  [Type.Mystic]: 'мистика',
+  [Type.Detective]: 'детектив',
+  [Type.SciFi]: 'sci-fi',
 }
