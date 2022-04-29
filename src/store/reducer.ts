@@ -4,13 +4,13 @@ import {Type} from '../const';
 import {QuestType} from '../types/quest-type';
 
 type StateType = {
-  selectedType: Type,
+  storedType: Type,
   quests: QuestType[],
   quest: QuestType,
 }
 
 const initialState: StateType = {
-  selectedType: Type.All,
+  storedType: Type.All,
   quests: [],
   quest: {} as QuestType,
 }
@@ -18,7 +18,7 @@ const initialState: StateType = {
 const reducer = createReducer(initialState, (builder) => {
   builder
     .addCase(setType, (state, action) => {
-      state.selectedType = action.payload;
+      state.storedType = action.payload;
     })
     .addCase(loadQuests, (state, action) => {
       state.quests = action.payload;
