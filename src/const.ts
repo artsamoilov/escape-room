@@ -1,3 +1,7 @@
+export const NAME_REG_EX = /^[a-zA-Zа-яА-ЯёЁ\s]*$/;
+export const PHONE_REG_EX = /\d{10}/;
+export const PEOPLE_COUNT_REG_EX = /\d/;
+
 export enum AppRoute {
   Home = '/',
   Contacts = '/contacts',

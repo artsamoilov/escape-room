@@ -24,12 +24,12 @@ const DetailedQuest = (): JSX.Element => {
 
   if (selectedQuest.id !== currentId) {
     store.dispatch(fetchSelectedQuestAction(currentId));
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
   }
 
-  const handleBookingBtnClick = () => {
-    setIsBookingModalOpened(true);
-  };
+  const handleBookingBtnClick = (): void => setIsBookingModalOpened(true);
+
+  const onCloseBtnClick = (): void => setIsBookingModalOpened(false);
 
   return (
     <MainLayout>
@@ -70,7 +70,7 @@ const DetailedQuest = (): JSX.Element => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && <BookingModal handleCloseBtnClick={onCloseBtnClick} peopleCount={selectedQuest.peopleCount} />}
       </S.Main>
     </MainLayout>
   );
