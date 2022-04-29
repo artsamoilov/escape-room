@@ -8,23 +8,23 @@ import {ReactComponent as IconPerson} from 'assets/img/icon-person.svg';
 import {ReactComponent as IconPuzzle} from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
 import {QuestType} from 'types/quest-type';
-import {Level, TranslatedLevel, Type, TranslatedType} from 'const';
+import {Level, TranslatedLevel, TranslatedType, Type} from 'const';
 import {useAppSelector} from 'hooks/hooks';
 import {SyntheticEvent, useState} from 'react';
 
 const QuestsCatalog = (): JSX.Element => {
   const quests = useAppSelector((state) => state.quests);
 
-  const [selectedType, setSelectedType] = useState(Type.All);
+  const [selectedType, setSelectedType] = useState(Type.AllQuests);
 
-  const getFilteredQuests = () => {
-    if (selectedType === Type.All) {
+  const getFilteredQuests = (): QuestType[] => {
+    if (selectedType === Type.AllQuests) {
       return quests.slice();
     }
     return quests.slice().filter(({type}: QuestType) => type === selectedType);
   };
 
-  const handleTabClick = (evt: SyntheticEvent) => {
+  const handleTabClick = (evt: SyntheticEvent): void => {
     const newQuestType = Object.keys(TranslatedType).find((newType) => TranslatedType[newType as Type] === evt.currentTarget.textContent);
     setSelectedType(newQuestType as Type);
   };
@@ -33,44 +33,44 @@ const QuestsCatalog = (): JSX.Element => {
     <>
       <S.Tabs>
         <S.TabItem>
-          <S.TabBtn onClick={handleTabClick} isActive>
+          <S.TabBtn onClick={handleTabClick} isActive={selectedType === Type.AllQuests}>
             <IconAllQuests/>
-            <S.TabTitle>Все квесты</S.TabTitle>
+            <S.TabTitle>{TranslatedType[Type.AllQuests]}</S.TabTitle>
           </S.TabBtn>
         </S.TabItem>
 
         <S.TabItem>
-          <S.TabBtn onClick={handleTabClick}>
+          <S.TabBtn onClick={handleTabClick} isActive={selectedType === Type.Adventures}>
             <IconAdventures/>
-            <S.TabTitle>Приключения</S.TabTitle>
+            <S.TabTitle>{TranslatedType[Type.Adventures]}</S.TabTitle>
           </S.TabBtn>
         </S.TabItem>
 
         <S.TabItem>
-          <S.TabBtn onClick={handleTabClick}>
+          <S.TabBtn onClick={handleTabClick} isActive={selectedType === Type.Horror}>
             <IconHorrors/>
-            <S.TabTitle>Ужасы</S.TabTitle>
+            <S.TabTitle>{TranslatedType[Type.Horror]}</S.TabTitle>
           </S.TabBtn>
         </S.TabItem>
 
         <S.TabItem>
-          <S.TabBtn onClick={handleTabClick}>
+          <S.TabBtn onClick={handleTabClick} isActive={selectedType === Type.Mystic}>
             <IconMystic/>
-            <S.TabTitle>Мистика</S.TabTitle>
+            <S.TabTitle>{TranslatedType[Type.Mystic]}</S.TabTitle>
           </S.TabBtn>
         </S.TabItem>
 
         <S.TabItem>
-          <S.TabBtn onClick={handleTabClick}>
+          <S.TabBtn onClick={handleTabClick} isActive={selectedType === Type.Detective}>
             <IconDetective/>
-            <S.TabTitle>Детектив</S.TabTitle>
+            <S.TabTitle>{TranslatedType[Type.Detective]}</S.TabTitle>
           </S.TabBtn>
         </S.TabItem>
 
         <S.TabItem>
-          <S.TabBtn onClick={handleTabClick}>
+          <S.TabBtn onClick={handleTabClick} isActive={selectedType === Type.Scifi}>
             <IconScifi/>
-            <S.TabTitle>Sci-fi</S.TabTitle>
+            <S.TabTitle>{TranslatedType[Type.Scifi]}</S.TabTitle>
           </S.TabBtn>
         </S.TabItem>
       </S.Tabs>

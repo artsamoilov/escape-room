@@ -27,19 +27,19 @@ export const TranslatedLevel = {
 }
 
 export enum Type {
-  All = 'all',
+  AllQuests = 'all',
   Adventures = 'adventures',
   Horror = 'horror',
   Mystic = 'mystic',
   Detective = 'detective',
-  SciFi = 'sci-fi',
+  Scifi = 'sci-fi',
 }
 
 export const TranslatedType = {
-  [Type.All]: 'Все квесты',
+  [Type.AllQuests]: 'Все квесты',
   [Type.Adventures]: 'Приключения',
   [Type.Horror]: 'Ужасы',
   [Type.Mystic]: 'Мистика',
   [Type.Detective]: 'Детектив',
-  [Type.SciFi]: 'Sci-fi',
+  [Type.Scifi]: 'Sci-fi',
 }
