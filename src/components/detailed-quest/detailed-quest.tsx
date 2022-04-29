@@ -5,18 +5,26 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
-import {Quests} from 'mocks/quests';
 import {AppRoute, Level, Type, TranslatedLevel, TranslatedType} from '../../const';
 import {Navigate, useParams} from 'react-router-dom';
+import {useAppSelector} from '../../hooks/hooks';
+import {store} from 'store/store';
+import {fetchSelectedQuestAction} from 'store/api-actions';
 
 const DetailedQuest = (): JSX.Element => {
+  const currentId = Number(useParams().id);
+  const quests = useAppSelector((store) => store.quests);
+  const selectedQuest = useAppSelector((store) => store.quest);
+
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
-  const {coverImg, title, type, duration, peopleCount, level, description} = Quests[0];
-
-  const currentId = Number(useParams().id);
-  if (!Quests.find(({id}) => id === currentId)) {
+  if (!quests.find(({id}) => id === currentId)) {
     return <Navigate to={AppRoute.NotFound} />;
+  }
+
+  if (selectedQuest.id !== currentId) {
+    store.dispatch(fetchSelectedQuestAction(currentId));
+    return <div>Loading...</div>;
   }
 
   const handleBookingBtnClick = () => {
@@ -27,34 +35,34 @@ const DetailedQuest = (): JSX.Element => {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src={`../${coverImg}`}
-          alt={title}
+          src={`../${selectedQuest.coverImg}`}
+          alt={selectedQuest.title}
           width="1366"
           height="768"
         />
         <S.PageContentWrapper>
           <S.PageHeading>
-            <S.PageTitle>{title}</S.PageTitle>
-            <S.PageSubtitle>{TranslatedType[type as Type]}</S.PageSubtitle>
+            <S.PageTitle>{selectedQuest.title}</S.PageTitle>
+            <S.PageSubtitle>{TranslatedType[selectedQuest.type as Type].toLowerCase()}</S.PageSubtitle>
           </S.PageHeading>
 
           <S.PageDescription>
             <S.Features>
               <S.FeaturesItem>
                 <IconClock width="20" height="20" />
-                <S.FeatureTitle>{duration} мин</S.FeatureTitle>
+                <S.FeatureTitle>{selectedQuest.duration} мин</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPerson width="19" height="24" />
-                <S.FeatureTitle>{peopleCount[0]}–{peopleCount[1]} чел</S.FeatureTitle>
+                <S.FeatureTitle>{selectedQuest.peopleCount[0]}–{selectedQuest.peopleCount[1]} чел</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPuzzle width="24" height="24" />
-                <S.FeatureTitle>{TranslatedLevel[level as Level]}</S.FeatureTitle>
+                <S.FeatureTitle>{TranslatedLevel[selectedQuest.level as Level]}</S.FeatureTitle>
               </S.FeaturesItem>
             </S.Features>
 
-            <S.QuestDescription>{description}</S.QuestDescription>
+            <S.QuestDescription>{selectedQuest.description}</S.QuestDescription>
 
             <S.QuestBookingBtn onClick={handleBookingBtnClick}>
               Забронировать

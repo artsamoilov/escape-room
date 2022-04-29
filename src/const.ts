@@ -1,10 +1,3 @@
-const ERROR_TIMEOUT = 2000;
-
-export enum HTTPCode {
-  BadRequest = 400,
-  NotFound = 404,
-}
-
 export enum AppRoute {
   Home = '/',
   Contacts = '/contacts',
@@ -39,10 +32,10 @@ export enum Type {
 }
 
 export const TranslatedType = {
-  [Type.All]: 'все квесты',
-  [Type.Adventures]: 'приключения',
-  [Type.Horror]: 'ужасы',
-  [Type.Mystic]: 'мистика',
-  [Type.Detective]: 'детектив',
-  [Type.SciFi]: 'sci-fi',
+  [Type.All]: 'Все квесты',
+  [Type.Adventures]: 'Приключения',
+  [Type.Horror]: 'Ужасы',
+  [Type.Mystic]: 'Мистика',
+  [Type.Detective]: 'Детектив',
+  [Type.SciFi]: 'Sci-fi',
 }
