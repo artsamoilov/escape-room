@@ -43,3 +43,10 @@ export const TranslatedType = {
   [Type.Detective]: 'Детектив',
   [Type.Scifi]: 'Sci-fi',
 }
+
+export enum QuestsLocation {
+  Latitude = 59.968314,
+  Longitude = 30.317519,
+}
+
+export const ZOOM_LEVEL = 16;
