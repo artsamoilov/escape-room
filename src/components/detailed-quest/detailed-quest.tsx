@@ -5,11 +5,11 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
-import {AppRoute, Level, Type, TranslatedLevel, TranslatedType} from '../../const';
-import {Navigate, useParams} from 'react-router-dom';
-import {useAppSelector} from '../../hooks/hooks';
-import {store} from 'store/store';
-import {fetchSelectedQuestAction} from 'store/api-actions';
+import { AppRoute, Level, Type, TranslatedLevel, TranslatedType } from 'const';
+import { Navigate, useParams } from 'react-router-dom';
+import { useAppSelector } from 'hooks/hooks';
+import { store } from 'store/store';
+import { fetchSelectedQuestAction } from 'store/api-actions';
 
 const DetailedQuest = (): JSX.Element => {
   const currentId = Number(useParams().id);

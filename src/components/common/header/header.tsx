@@ -1,6 +1,6 @@
 import logo from 'assets/img/logo.svg';
 import * as S from './header.styled';
-import { AppRoute } from '../../../const';
+import { AppRoute } from 'const';
 
 const Header = (): JSX.Element => (
   <S.StyledHeader>

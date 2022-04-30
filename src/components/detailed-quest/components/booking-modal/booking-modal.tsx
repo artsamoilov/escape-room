@@ -1,11 +1,11 @@
 import * as S from './booking-modal.styled';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
-import {SyntheticEvent, useRef} from 'react';
-import {OrderType} from 'types/order-type';
-import {useAppDispatch} from 'hooks/hooks';
-import {postOrderAction} from 'store/api-actions';
-import {NAME_REG_EX, PEOPLE_COUNT_REG_EX, PHONE_REG_EX} from 'const';
-import {toast} from 'react-toastify';
+import { SyntheticEvent, useRef } from 'react';
+import { OrderType } from 'types/order-type';
+import { useAppDispatch } from 'hooks/hooks';
+import { postOrderAction } from 'store/api-actions';
+import { NAME_REG_EX, PEOPLE_COUNT_REG_EX, PHONE_REG_EX } from 'const';
+import { toast } from 'react-toastify';
 
 type PropsType = {
   handleCloseBtnClick: () => void,
@@ -146,6 +146,6 @@ const BookingModal = ({handleCloseBtnClick, peopleCount}: PropsType): JSX.Elemen
       </S.Modal>
     </S.BlockLayer>
   );
-}
+};
 
 export default BookingModal;

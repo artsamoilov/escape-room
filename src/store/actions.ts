@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import {QuestType} from '../types/quest-type';
+import { QuestType } from 'types/quest-type';
 
 export const loadQuests = createAction<QuestType[]>('data/loadQuests');
 

@@ -1,8 +1,8 @@
 import { MainLayout, PageTitle, PageHeading, PageSubtext } from 'components/common/common';
 import * as S from './not-found.styled';
 import { AppRoute } from 'const';
-import {SyntheticEvent} from 'react';
-import {useNavigate} from 'react-router-dom';
+import { SyntheticEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NotFound = (): JSX.Element => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const NotFound = (): JSX.Element => {
   const handleLinkClick = (evt: SyntheticEvent): void => {
     evt.preventDefault();
     navigate(AppRoute.Home);
-  }
+  };
 
   return (
     <MainLayout>
@@ -25,6 +25,6 @@ const NotFound = (): JSX.Element => {
       </S.Main>
     </MainLayout>
   );
-}
+};
 
 export default NotFound;
