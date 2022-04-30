@@ -1,8 +1,8 @@
-import {useEffect, useRef, useState} from 'react';
-import leaflet, {Icon, Marker} from 'leaflet';
+import { useEffect, useRef, useState } from 'react';
+import leaflet, { Icon, Marker } from 'leaflet';
+import { QuestsLocation, ZOOM_LEVEL } from 'const';
 import pinUrl from 'assets/img/icon-location.svg'
 import 'leaflet/dist/leaflet.css';
-import {QuestsLocation, ZOOM_LEVEL} from 'const';
 
 const pinIcon = new Icon({
   iconUrl: pinUrl,
@@ -44,6 +44,6 @@ const Map = (): JSX.Element => {
   }
 
   return <div style={{height: '100%', width: '100%'}} ref={mapRef} />;
-}
+};
 
 export default Map;

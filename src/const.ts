@@ -1,5 +1,5 @@
 export const NAME_REG_EX = /^[a-zA-Zа-яА-ЯёЁ\s]*$/;
-export const PHONE_REG_EX = /\d{10}/;
+export const PHONE_REG_EX = /\d{10,}/;
 export const PEOPLE_COUNT_REG_EX = /\d/;
 
 export enum AppRoute {
@@ -21,7 +21,7 @@ export enum Level {
 }
 
 export const TranslatedLevel = {
-  [Level.Easy]: 'лёгкий',
+  [Level.Easy]: 'простой',
   [Level.Medium]: 'средний',
   [Level.Hard]: 'сложный',
 }

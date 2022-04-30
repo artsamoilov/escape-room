@@ -1,6 +1,6 @@
-import {createReducer} from '@reduxjs/toolkit';
-import {loadQuests, loadQuest} from './actions';
-import {QuestType} from '../types/quest-type';
+import { createReducer } from '@reduxjs/toolkit';
+import { loadQuests, loadQuest } from './actions';
+import { QuestType } from 'types/quest-type';
 
 type StateType = {
   quests: QuestType[],
@@ -10,7 +10,7 @@ type StateType = {
 const initialState: StateType = {
   quests: [],
   quest: {} as QuestType,
-}
+};
 
 const reducer = createReducer(initialState, (builder) => {
   builder
@@ -19,7 +19,7 @@ const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(loadQuest, (state, action) => {
       state.quest = action.payload;
-    })
+    });
 });
 
-export {reducer};
+export { reducer };

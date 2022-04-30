@@ -1,4 +1,4 @@
-import axios, {AxiosInstance} from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 const BASE_URL = 'http://localhost:3001';
 const REQUEST_TIMEOUT = 5000;
